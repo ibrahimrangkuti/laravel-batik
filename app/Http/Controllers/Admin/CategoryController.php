@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::allw();
+        $categories = Category::all();
         return view('admin.category.index', compact('categories'));
     }
 
