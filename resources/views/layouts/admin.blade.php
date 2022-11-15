@@ -54,6 +54,16 @@
   <!-- End custom js for this page-->
 
   <script src="{{ asset('assets/js/jquery.cookie.js') }}" type="text/javascript"></script>
+
+  {{-- <script>
+    $(document).ready(function() {
+        $('.btn-delete').click(function() {
+            e.preventDefault()
+
+            var slug = $(this).closest('tr')
+        })
+    })
+  </script> --}}
 </body>
 
 </html>

@@ -45,6 +45,30 @@ class CategoryController extends Controller
         return redirect(route('admin.category.index'));
     }
 
+    public function edit($slug)
+    {
+        $category = Category::where('slug', $slug)->first();
+        return view('admin.category.edit', compact('category'));
+    }
+
+    public function update(Request $request, $slug)
+    {
+        $request->validate([
+            'name' => ['string', 'min:3'],
+            'description' => ['min:3']
+        ]);
+
+        $category = Category::where('slug', $slug)->first();
+        $category->update([
+            'slug' => Str::slug($request->name),
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
+
+        Alert::toast('Data kategori berhasil diedit!', 'success');
+        return redirect(route('admin.category.index'));
+    }
+
     public function delete(Request $request, $slug)
     {
         $category = Category::where('slug', $slug)->first();

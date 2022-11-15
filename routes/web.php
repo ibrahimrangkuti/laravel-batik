@@ -32,6 +32,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->name('admin.')->group(f
         Route::get('/', [AdminCategoryController::class, 'index'])->name('index');
         Route::get('create', [AdminCategoryController::class, 'create'])->name('create');
         Route::post('create', [AdminCategoryController::class, 'store'])->name('store');
+        Route::get('{slug}/edit', [AdminCategoryController::class, 'edit'])->name('edit');
+        Route::post('{slug}/edit', [AdminCategoryController::class, 'update'])->name('update');
         Route::post('{slug}/delete', [AdminCategoryController::class, 'delete'])->name('delete');;
     });
 });

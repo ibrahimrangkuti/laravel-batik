@@ -24,14 +24,15 @@
                     @endif
                     @foreach ($categories as $category)
                     <tr>
+                        <input type="hidden" class="slug" value="{{ $category->slug }}">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->description }}</td>
                         <td>
                             <form action="{{ route('admin.category.delete', $category->slug) }}" method="POST">
                                 @csrf
-                                <a href="" class="btn btn-warning btn-sm text-white">Edit</a>
-                                <button type="submit" class="btn btn-danger btn-sm text-white">Hapus</button>
+                                <a href="{{ route('admin.category.edit', $category->slug) }}" class="btn btn-warning btn-sm text-white">Edit</a>
+                                <button type="submit" class="btn btn-danger btn-sm text-white btn-delete">Hapus</button>
                             </form>
                         </td>
                     </tr>
