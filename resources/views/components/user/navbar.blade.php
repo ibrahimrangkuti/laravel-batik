@@ -40,6 +40,11 @@
                             <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                         </ul>
                     </li>
+                @else
+                    <div>
+                        <a href="" class="btn">Login</a>
+                        <a href="" class="btn btn-primary">Register</a>
+                    </div>
                 @endif
             </div>
         </div>
