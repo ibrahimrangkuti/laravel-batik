@@ -16,9 +16,9 @@
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="{{ route('admin.users.index') }}">Data User</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Product</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.category.index') }}">Data Category</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Data Order</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Produk</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.category.index') }}">Data Kategori</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Data Pesanan</a></li>
           </ul>
         </div>
       </li>

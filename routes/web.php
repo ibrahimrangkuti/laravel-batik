@@ -4,13 +4,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PagesController::class, 'index'])->name('home');
+// Route::get('search=', [PagesController::class, 'search'])->name('search');
+// Route::get('category', [PagesController::class, 'index'])->name('category');
+// Route::get('category={slug}', [PagesController::class, 'index'])->name('category');
+Route::get('category/{slug}', [PagesController::class, 'category'])->name('category');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'processLogin'])->name('processLogin');;
